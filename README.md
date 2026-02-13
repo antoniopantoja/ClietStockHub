@@ -106,6 +106,20 @@ Regra de domínio:
 - **Resiliência de escrita:** idempotência por header `Idempotency-Key` na criação de pedidos
 - **Frontend:** Angular com Reactive Forms, RxJS e interceptor global de erros
 
+## Status atual do backend
+
+Implementações já concluídas na estrutura base da API:
+
+- Estrutura inicial em Clean Architecture com solução e projetos separados (`Api`, `Application`, `Domain`, `Infrastructure`)
+- Registro de dependências e composição do pipeline organizados por extensões
+- Envelope padrão de resposta (`cod_retorno`, `mensagem`, `data`)
+- Endpoints iniciais de saúde: `GET /health` e `GET /api/health`
+- Middleware global para tratamento de exceções não tratadas
+- Swagger/OpenAPI configurado com documentação inicial
+- Logging estruturado com Serilog (incluindo logs de requisição HTTP)
+
+Para detalhes de organização interna do backend, consultar `backend/README-backend.md`.
+
 ## Execução local
 
 ### Pré-requisitos
