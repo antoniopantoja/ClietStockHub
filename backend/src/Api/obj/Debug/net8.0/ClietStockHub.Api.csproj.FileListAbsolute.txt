@@ -46,7 +46,6 @@ C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Api\obj\Debug\net8.0\sta
 C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Api\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ClietStockHub.Api.props
 C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Api\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ClietStockHub.Api.props
 C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Api\obj\Debug\net8.0\staticwebassets.pack.json
-C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Api\obj\Debug\net8.0\ClietSto.9FCD0810.Up2Date
 C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Api\obj\Debug\net8.0\ClietStockHub.Api.dll
 C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Api\obj\Debug\net8.0\refint\ClietStockHub.Api.dll
