@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "8qMAYktSAuY=",
+  "success": true,
+  "projectFilePath": "C:\\projetos\\ClietStockHub.git\\ClietStockHub\\backend\\src\\Application\\ClietStockHub.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\anton\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

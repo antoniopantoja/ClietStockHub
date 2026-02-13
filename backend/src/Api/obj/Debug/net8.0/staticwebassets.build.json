@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Fm7yXKaTLu8XyRwyQhqVQUppsLDQD41RKw79CStmZeM=",
+  "Source": "ClietStockHub.Api",
+  "BasePath": "_content/ClietStockHub.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

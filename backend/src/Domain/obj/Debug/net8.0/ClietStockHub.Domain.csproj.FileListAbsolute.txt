@@ -1,0 +1,12 @@
+C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Domain\bin\Debug\net8.0\ClietStockHub.Domain.deps.json
+C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Domain\bin\Debug\net8.0\ClietStockHub.Domain.dll
+C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Domain\bin\Debug\net8.0\ClietStockHub.Domain.pdb
+C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Domain\obj\Debug\net8.0\ClietStockHub.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Domain\obj\Debug\net8.0\ClietStockHub.Domain.AssemblyInfoInputs.cache
+C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Domain\obj\Debug\net8.0\ClietStockHub.Domain.AssemblyInfo.cs
+C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Domain\obj\Debug\net8.0\ClietStockHub.Domain.csproj.CoreCompileInputs.cache
+C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Domain\obj\Debug\net8.0\ClietStockHub.Domain.sourcelink.json
+C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Domain\obj\Debug\net8.0\ClietStockHub.Domain.dll
+C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Domain\obj\Debug\net8.0\refint\ClietStockHub.Domain.dll
+C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Domain\obj\Debug\net8.0\ClietStockHub.Domain.pdb
+C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Domain\obj\Debug\net8.0\ref\ClietStockHub.Domain.dll
