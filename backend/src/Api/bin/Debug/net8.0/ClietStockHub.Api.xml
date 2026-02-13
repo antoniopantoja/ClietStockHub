@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClietStockHub.Api</name>
+    </assembly>
+    <members>
+        <member name="M:ClietStockHub.Api.Controllers.HealthController.Get">
+            <summary>
+            Verifica saúde da API no prefixo padrão de controllers.
+            </summary>
+            <returns>Envelope com status da aplicação.</returns>
+        </member>
+        <member name="M:ClietStockHub.Api.Controllers.HealthController.RootHealth">
+            <summary>
+            Verifica saúde da API na raiz para integração com probes.
+            </summary>
+            <returns>Envelope com status da aplicação.</returns>
+        </member>
+    </members>
+</doc>

@@ -41,3 +41,5 @@ C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Api\obj\Debug\net8.0\ref
 C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Api\obj\Debug\net8.0\ClietStockHub.Api.pdb
 C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Api\obj\Debug\net8.0\ClietStockHub.Api.genruntimeconfig.cache
 C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Api\obj\Debug\net8.0\ref\ClietStockHub.Api.dll
+C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Api\bin\Debug\net8.0\ClietStockHub.Api.xml
+C:\projetos\ClietStockHub.git\ClietStockHub\backend\src\Api\obj\Debug\net8.0\ClietStockHub.Api.xml

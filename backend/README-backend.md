@@ -15,3 +15,26 @@ Estrutura inicial baseada em Clean Architecture:
 - PostgreSQL
 - Serilog
 
+## Swagger e documentação inicial
+
+- Swagger/OpenAPI habilitado na API (`Swashbuckle.AspNetCore`)
+- Documento: `v1`
+- URL local (profile `http`): `http://localhost:5167/swagger`
+
+### Endpoints iniciais
+
+- `GET /health`
+- `GET /api/health`
+
+### Envelope de resposta
+
+Todos os endpoints retornam o envelope padrão:
+
+```json
+{
+	"cod_retorno": 0,
+	"mensagem": null,
+	"data": {}
+}
+```
+

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClietStockHub.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+963127994eef7c1e3479486fe4ff5971297ad140")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eda169fc2383bad5c74a63eae5fa034c97a5d18f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClietStockHub.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClietStockHub.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
