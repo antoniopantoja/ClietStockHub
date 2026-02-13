@@ -1,4 +1,5 @@
 using ClietStockHub.Api.Common;
+using ClietStockHub.Api.Middleware;
 using ClietStockHub.Application;
 using ClietStockHub.Infrastructure;
 using Microsoft.OpenApi.Models;
@@ -32,6 +33,8 @@ builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
+
+app.UseGlobalExceptionHandling();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
