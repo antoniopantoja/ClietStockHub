@@ -3,9 +3,14 @@ using ClietStockHub.Api.Middleware;
 using ClietStockHub.Application;
 using ClietStockHub.Infrastructure;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog((context, loggerConfiguration) => loggerConfiguration
+    .ReadFrom.Configuration(context.Configuration)
+    .Enrich.FromLogContext());
 
 // Add services to the container.
 
@@ -35,6 +40,7 @@ builder.Services.AddInfrastructure(builder.Configuration);
 var app = builder.Build();
 
 app.UseGlobalExceptionHandling();
+app.UseSerilogRequestLogging();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
