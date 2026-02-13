@@ -15,4 +15,13 @@ public sealed class HealthController : ControllerBase
             status = "healthy"
         }));
     }
+
+    [HttpGet("/health")]
+    public IActionResult RootHealth()
+    {
+        return Ok(ApiEnvelope.Success(new
+        {
+            status = "healthy"
+        }));
+    }
 }
