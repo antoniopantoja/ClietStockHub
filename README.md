@@ -86,12 +86,12 @@ Regra de domínio:
 │  ├─ src/ (Api, Application, Domain, Infrastructure)
 │  ├─ tests/
 │  ├─ Dockerfile
-│  └─ README-backend.md (opcional)
+│  └─ README-backend.md
 ├─ frontend/
 │  ├─ src/
 │  ├─ e2e/
 │  ├─ Dockerfile
-│  └─ README-frontend.md (opcional)
+│  └─ README-frontend.md
 ├─ docker-compose.yml
 ├─ .env.example
 └─ README.md
