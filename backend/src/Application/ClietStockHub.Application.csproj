@@ -2,10 +2,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\ClietStockHub.Domain.csproj" />
+    <ProjectReference Include="..\Infrastructure\ClietStockHub.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.42" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.3" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+    <PackageReference Include="Npgsql" Version="8.0.3" />
   </ItemGroup>
 
   <PropertyGroup>

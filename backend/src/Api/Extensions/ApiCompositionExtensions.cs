@@ -1,3 +1,5 @@
+using Npgsql.EntityFrameworkCore.PostgreSQL;
+using Microsoft.EntityFrameworkCore;
 using ClietStockHub.Api.Common;
 using ClietStockHub.Api.Filters;
 using ClietStockHub.Api.Middleware;
@@ -45,13 +47,20 @@ public static class ApiCompositionExtensions
 
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(options =>
+            // Ordem customizada dos grupos/tags será feita no SwaggerUI (TagActionsSorter)
         {
             options.SwaggerDoc("v1", new OpenApiInfo
             {
                 Title = "ClietStockHub API",
                 Version = "v1",
-                Description = "API de Catálogo e Pedidos com envelope padrão de resposta."
+                Description = "API de Catálogo e Pedidos com envelope padrão de resposta.\n\n" +
+                    "\u2022 O header 'Idempotency-Key' é OBRIGATÓRIO para POST /api/Orders.\n" +
+                    "\u2022 Use um UUID único por transação. Exemplo: 'Idempotency-Key: 123e4567-e89b-12d3-a456-426614174000'\n\n" +
+                    "Se repetir a requisição com a mesma chave, o resultado será idempotente."
             });
+
+            // Adiciona o header Idempotency-Key como obrigatório no endpoint de pedidos
+            options.OperationFilter<IdempotencyKeyHeaderOperationFilter>();
 
             var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
@@ -64,6 +73,12 @@ public static class ApiCompositionExtensions
 
         services.AddApplication();
         services.AddInfrastructure(configuration);
+        services.AddScoped<ClietStockHub.Application.Services.OrderService>();
+        services.AddScoped<ClietStockHub.Application.Services.OrderQueries>();
+
+        // Configura DbContext para PostgreSQL
+        services.AddDbContext<ClietStockHub.Infrastructure.Persistence.AppDbContext>(options =>
+            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
 
         return services;
     }

@@ -1,4 +1,5 @@
 using ClietStockHub.Api.Extensions;
+using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +14,13 @@ if (builder.Environment.IsDevelopment())
 builder.Host.AddStructuredLogging();
 builder.Services.AddApiServices(builder.Configuration);
 
+
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+	var db = scope.ServiceProvider.GetRequiredService<ClietStockHub.Infrastructure.Persistence.AppDbContext>();
+	db.Database.Migrate();
+}
 app.UseApiPipeline();
 
 app.Run();
