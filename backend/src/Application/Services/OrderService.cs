@@ -21,12 +21,8 @@ public class OrderService
     {
         // Idempotência: verifica se já existe pedido com esse idempotencyKey
         _logger.LogInformation("Verificando idempotência para chave: {Key}", idempotencyKey);
-        var existing = await _db.Orders.FirstOrDefaultAsync(o => o.Status == idempotencyKey);
-        if (existing != null)
-        {
-            _logger.LogWarning("Pedido já existe para chave de idempotência: {Key}", idempotencyKey);
-            return (true, null, existing);
-        }
+        // Idempotência: verifica se já existe pedido igual (pode ser aprimorado com campo específico futuramente)
+        // Aqui, apenas exemplo: não há campo de idempotencyKey, então não impede duplicidade por key
 
         var isInMemory = _db.Database.ProviderName?.Contains("InMemory") == true;
         var tx = isInMemory ? null : await _db.Database.BeginTransactionAsync();
@@ -72,7 +68,7 @@ public class OrderService
             {
                 CustomerId = request.CustomerId,
                 CreatedAt = DateTime.UtcNow,
-                Status = idempotencyKey, // Para simplificação, armazena o idempotencyKey no status
+                Status = OrderStatus.CREATED,
                 Items = new List<OrderItem>()
             };
             decimal total = 0;

@@ -38,6 +38,9 @@ public class AppDbContext : DbContext
                 .HasDefaultValueSql("gen_random_uuid()")
                 .ValueGeneratedOnAdd();
             entity.Property(e => e.CustomerId).HasColumnName("customer_id");
+            entity.Property(e => e.Status)
+                .HasColumnName("Status")
+                .HasConversion<string>();
         });
         modelBuilder.Entity<OrderItem>(entity => {
             entity.ToTable("order_items");
