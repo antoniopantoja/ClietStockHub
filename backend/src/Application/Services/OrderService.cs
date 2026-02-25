@@ -8,6 +8,11 @@ namespace ClietStockHub.Application.Services;
 
 public class OrderService
 {
+    public async Task DeleteOrderAsync(Order order)
+    {
+        _db.Orders.Remove(order);
+        await _db.SaveChangesAsync();
+    }
     private readonly AppDbContext _db;
     private readonly ILogger<OrderService> _logger;
 
@@ -17,12 +22,22 @@ public class OrderService
         _logger = logger;
     }
 
+    public async Task<Order?> GetOrderByIdAsync(Guid id)
+    {
+        return await _db.Orders.FindAsync(id);
+    }
+
+    public async Task SaveOrderAsync(Order order)
+    {
+        _db.Orders.Update(order);
+        await _db.SaveChangesAsync();
+    }
+
     public async Task<(bool Success, string? Error, Order? Order)> CreateOrderAsync(CreateOrderRequest request, string idempotencyKey)
     {
-        // Idempotência: verifica se já existe pedido com esse idempotencyKey
+
         _logger.LogInformation("Verificando idempotência para chave: {Key}", idempotencyKey);
-        // Idempotência: verifica se já existe pedido igual (pode ser aprimorado com campo específico futuramente)
-        // Aqui, apenas exemplo: não há campo de idempotencyKey, então não impede duplicidade por key
+
 
         var isInMemory = _db.Database.ProviderName?.Contains("InMemory") == true;
         var tx = isInMemory ? null : await _db.Database.BeginTransactionAsync();

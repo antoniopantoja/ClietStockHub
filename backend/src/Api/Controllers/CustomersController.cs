@@ -9,6 +9,27 @@ namespace ClietStockHub.Api.Controllers;
 [Route("api/[controller]")]
 public class CustomersController : ControllerBase
 {
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> Patch(Guid id, [FromBody] Dictionary<string, object> patch)
+    {
+        var customer = await _db.Customers.FindAsync(id);
+        if (customer == null) return NotFound();
+        bool changed = false;
+        foreach (var kv in patch)
+        {
+            switch (kv.Key.ToLower())
+            {
+                case "name": customer.Name = kv.Value?.ToString() ?? customer.Name; changed = true; break;
+                case "email": customer.Email = kv.Value?.ToString() ?? customer.Email; changed = true; break;
+                case "document": customer.Document = kv.Value?.ToString() ?? customer.Document; changed = true; break;
+            }
+        }
+        if (!changed) return BadRequest(new { error = "Nenhum campo válido para atualizar." });
+        await _db.SaveChangesAsync();
+        _logger.LogInformation("Cliente parcialmente atualizado: {Id}", customer.Id);
+        return Ok(customer);
+    }
+
     private readonly AppDbContext _db;
     private readonly ILogger<CustomersController> _logger;
     public CustomersController(AppDbContext db, ILogger<CustomersController> logger)
@@ -18,11 +39,23 @@ public class CustomersController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> GetAll([FromQuery] int page = 1, [FromQuery] int pageSize = 20)
     {
-        var customers = await _db.Customers.AsNoTracking().ToListAsync();
-        _logger.LogInformation("Listando todos os clientes. Total: {Count}", customers.Count);
-        return Ok(customers);
+        if (page < 1) page = 1;
+        if (pageSize < 1) pageSize = 20;
+        var query = _db.Customers.AsNoTracking();
+        var total = await query.CountAsync();
+        var customers = await query
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+        _logger.LogInformation("Listando clientes paginados. Página: {Page}, Tamanho: {PageSize}, Total: {Total}", page, pageSize, total);
+        return Ok(new {
+            page,
+            pageSize,
+            total,
+            items = customers
+        });
     }
 
     [HttpGet("{id}")]

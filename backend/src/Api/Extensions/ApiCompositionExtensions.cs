@@ -149,11 +149,7 @@ public static class ApiCompositionExtensions
         app.UseAuthorization();
 
         app.MapControllers();
-        app.MapGet("/", () => Results.Ok(ApiEnvelope.Success(new
-        {
-            service = "ClietStockHub.Api",
-            status = "running"
-        })));
+
 
         return app;
     }

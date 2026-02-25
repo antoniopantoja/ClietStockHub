@@ -1,13 +1,3 @@
-
-/// <summary>
-/// Envelope padrão de resposta da API.
-/// Todas as respostas públicas seguem este contrato:
-/// {
-///   "cod_retorno": 0 ou 1, // 0: sucesso, 1: erro
-///   "mensagem": string|null, // mensagem opcional de erro ou aviso
-///   "data": objeto|null // payload da operação
-/// }
-/// </summary>
 using System.Text.Json.Serialization;
 
 namespace ClietStockHub.Api.Common;
